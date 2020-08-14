@@ -1,0 +1,12 @@
+{
+  "name": "pluto",
+  "displayName": "pluto",
+  "expo": {
+    "name": "pluto",
+    "slug": "pluto",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
