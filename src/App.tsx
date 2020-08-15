@@ -1,21 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
+import React from "react";
+import { ActivityIndicator, StatusBar } from "react-native";
+import { Lato_400Regular, Lato_700Bold } from "@expo-google-fonts/lato";
+import { useFonts } from "expo-font";
+import { Routes } from "./routes";
+import { Colors } from "./config/color";
 export default function App() {
+  let [fontsLoaded] = useFonts({
+    Lato_Regular: Lato_400Regular,
+    Lato_Bold: Lato_700Bold,
+  });
+
+  if (!fontsLoaded) return <ActivityIndicator />;
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <Routes />
+      <StatusBar backgroundColor={Colors.secondary} translucent />
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
